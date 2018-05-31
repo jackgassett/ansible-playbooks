@@ -1,3 +1,0 @@
-# DNS Servers
-#export CHIPDNA_DNS_SERVER01={{ dns1 }}
-#export CHIPDNA_DNS_SERVER02={{ dns2 }}
