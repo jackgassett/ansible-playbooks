@@ -1,0 +1,9 @@
+- hosts: all
+  vars:
+    dns1: '1.1.1.1'
+    dns2: '2.2.2.2'
+  tasks:
+    - name: Create 20-paybox-network
+      template:
+        src: 20-paybox-network.j2
+        dest: /etc/sysconfig/paybox/20-paybox-network
