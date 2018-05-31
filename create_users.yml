@@ -1,16 +1,20 @@
 - name: Create new users
   hosts: all
   tasks:
-     - name: Add the atpm users
+     - name: Add the atpm user jack
        user:
          name: jack
          comment: jack
          uid: 1040
          
+     - name: Add the atpm user ken
+       user:
          name: kenneth
          comment: kenneth
          uid: 1041
-         
+
+     - name: Add the atpm user miuel
+       user:         
          name: miguel
          comment: miguel
          uid: 1042         
