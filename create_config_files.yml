@@ -3,6 +3,12 @@
     dns1: '1.1.1.1'
     dns2: '2.2.2.2'
   tasks:
+    - name: ensure /etc/sysconfig/paybox directory exists
+      file: >
+       path=/etc/sysconfig/paybox
+        recurse=yes
+        state=directory
+  
     - name: Create 20-paybox-network
       template:
         src: 20-paybox-network.j2
