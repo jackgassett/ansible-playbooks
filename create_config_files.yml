@@ -1,7 +1,39 @@
-- hosts: all
+- hosts: atpm1
   vars:
     dns1: '1.1.1.1'
+    dns2: '2.2.2.1'
+  tasks:
+    - name: ensure /etc/sysconfig/paybox directory exists
+      file: >
+       path=/etc/sysconfig/paybox
+        recurse=yes
+        state=directory
+  
+    - name: Create 20-paybox-network
+      template:
+        src: 20-paybox-network.j2
+        dest: /etc/sysconfig/paybox/20-paybox-network
+        
+- hosts: atpm2
+  vars:
+    dns1: '1.1.1.2'
     dns2: '2.2.2.2'
+  tasks:
+    - name: ensure /etc/sysconfig/paybox directory exists
+      file: >
+       path=/etc/sysconfig/paybox
+        recurse=yes
+        state=directory
+  
+    - name: Create 20-paybox-network
+      template:
+        src: 20-paybox-network.j2
+        dest: /etc/sysconfig/paybox/20-paybox-network        
+
+- hosts: atpm3
+  vars:
+    dns1: '1.1.1.3'
+    dns2: '2.2.2.3'
   tasks:
     - name: ensure /etc/sysconfig/paybox directory exists
       file: >
