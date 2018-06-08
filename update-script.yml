@@ -1,0 +1,5 @@
+---
+- hosts: all
+  tasks:
+  - name: Running upgrade script
+     - script: upgrade_script.sh
