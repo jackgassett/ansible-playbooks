@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "Upgrading system"
-echo "Parameter $0"
+echo "Parameter $1"
